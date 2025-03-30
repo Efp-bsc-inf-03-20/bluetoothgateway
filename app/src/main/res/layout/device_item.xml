@@ -1,23 +1,37 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:orientation="vertical">
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/deviceNameTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/deviceName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Device Name"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"/>
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/connectButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/deviceAddressTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/deviceAddress"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Device Address"
+        android:layout_marginTop="4dp"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"/>
-</LinearLayout>
+        app:layout_constraintEnd_toStartOf="@id/connectButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deviceName" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
